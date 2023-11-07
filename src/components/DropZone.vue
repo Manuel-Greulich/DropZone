@@ -10,7 +10,7 @@
         <span>Drag or Drop File</span>
         <span>OR</span>
         <label for="dropzoneFile">Select File</label>
-        <input type="file" id="dropzoneFile" />
+        <input type="file" id="dropzoneFile" class="dropzoneFile" />
     </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style scopedhnm>
+<style scoped>
 .dropzone {
     width: 400px;
     height: 200px;
@@ -44,6 +44,17 @@ export default {
     border: 2px dashed #41b883;
     background-color: #fff;
     transition: 0.3s ease all;
+}
+
+.active-dropzone {
+    color: #fff;
+    border-color: #fff;
+    background-color: #41b883;
+}
+
+.active-dropzone label {
+    background-color: #fff;
+    color: #41b883;
 }
 
 label {
