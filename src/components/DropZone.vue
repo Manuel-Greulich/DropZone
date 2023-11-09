@@ -15,19 +15,17 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
     name: "HelloWorld",
-
-    setup() {
-        const active = ref(false);
-
-        const toggleActive = () => {
-            active.value = !active.value;
+    data() {
+        return {
+            active: false,
         };
-
-        return { active, toggleActive };
+    },
+    methods: {
+        toggleActive() {
+            this.active = !this.active;
+        },
     },
 };
 </script>

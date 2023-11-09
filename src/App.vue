@@ -8,27 +8,24 @@
 
 <script>
 import DropZone from "./components/DropZone.vue";
-import { ref } from "vue";
 
 export default {
     name: "App",
     components: {
         DropZone,
     },
-
-    setup() {
-        let dropzoneFile = ref("");
-
-        const drop = (e) => {
-            dropzoneFile.value = e.dataTransfer.files[0];
+    data() {
+        return {
+            dropzoneFile: "",
         };
-
-        const selectedFile = () => {
-            dropzoneFile.value =
-                document.querySelector(".dropzoneFile").files[0];
-        };
-
-        return { dropzoneFile, drop, selectedFile };
+    },
+    methods: {
+        drop(e) {
+            this.dropzoneFile = e.dataTransfer.files[0];
+        },
+        selectedFile() {
+            this.dropzoneFile = document.querySelector(".dropzoneFile").files[0];
+        },
     },
 };
 </script>
